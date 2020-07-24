@@ -1,8 +1,22 @@
 import React from 'react';
+import BattleView from './components/BattleView/BattleView';
+import Villager from './assets/villager.png';
+import Orc from './assets/orc.png';
+
+const gameCharacters = [
+  {
+    type: 'Villager',
+    image: Villager,
+  },
+  {
+    type: 'Orc',
+    image: Orc,
+  },
+];
 
 function App() {
   return (
-    <div>RPG Battle Simulator</div>
+    <BattleView characters={gameCharacters} />
   );
 }
 
