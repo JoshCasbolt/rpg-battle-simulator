@@ -6,10 +6,13 @@ Button.propTypes = {
 };
 
 function Button(props) {
+  const {
+    buttonHandler,
+  } = props;
   return (
-    <div>
-      
-    </div>
+    <button onClick={() => buttonHandler()}>
+      Hello
+    </button>
   );
 }
 

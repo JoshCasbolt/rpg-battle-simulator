@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-const assetPath = '../../assets/';
-
+import HealthBar from '../HealthBar/HealthBar';
 
 const PlayerView = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-const PlayerPortrait = styled.div`
+const PlayerPortrait = styled.img`
   height: 256px;
   width: 256px;
-  background-size: cover;
-  background-image: url(${(props) => props.character.image});
 `;
 
 class Player extends Component {
@@ -29,9 +26,14 @@ class Player extends Component {
       character,
     } = this.props;
 
+    const {
+      health,
+    } = this.state;
+
     return (
       <PlayerView>
-        <PlayerPortrait character={character} />
+        <PlayerPortrait src={character.image} />
+        <HealthBar health={character.hitpoints} />
       </PlayerView>
     );
   }
